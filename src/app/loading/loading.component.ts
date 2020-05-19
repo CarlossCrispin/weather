@@ -1,0 +1,43 @@
+import { CurrentWeatherService } from './../services/current-weather.service';
+import { element } from 'protractor';
+import { loadingAnimation } from './../animations/loading.animation';
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-loading',
+  templateUrl: './loading.component.html',
+  styleUrls: ['./loading.component.sass'],
+  animations: [loadingAnimation()]
+})
+export class LoadingComponent implements OnInit {
+
+
+
+  _elements : string[] = ['#F8C6A2','#E18453','#05A6A6','#037F8C','#025E73'] ;
+
+  public elements: string[];
+  constructor(private currentWeatherService : CurrentWeatherService ) { }
+
+  ngOnInit() {
+    this.set();
+  }
+
+  set(){
+    this.elements = this._elements;
+    this.scheduleNextIteration();
+  }
+
+  scheduleNextIteration(){
+    setTimeout(() =>{
+      if(this.elements.length == 0) return this.set()
+
+      this.clear();
+
+    }, 100 * this._elements.length + 300)
+  }
+
+  clear(){
+    this.elements = [];
+    this.scheduleNextIteration();
+  }
+}

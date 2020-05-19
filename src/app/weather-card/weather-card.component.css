@@ -1,0 +1,65 @@
+:host {
+  display: inline-block;
+}
+h1 {
+  color: #f8c6a2;
+  text-shadow: 2px 2px 2px #e18453;
+}
+.card {
+  box-sizing: border-box;
+  font-weight: slim;
+  background: white;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 16px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  text-align: center;
+  padding: 1.5em;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas: "icon icon temperature temperature" "lowtemp lowtemp hightemp hightemp" "description description description description";
+}
+.card .temp {
+  grid-area: temperature;
+}
+.card .temp p {
+  margin: 0;
+}
+.card .temp .big {
+  font-size: 2em;
+  color: #05a6a6;
+  font-weight: bold;
+}
+.card .icon {
+  grid-area: icon;
+}
+.card .description {
+  grid-area: description;
+}
+.card .description h2 {
+  color: #e18453;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  letter-spacing: 0.3em;
+}
+.card .description p {
+  color: #05a6a6;
+}
+.low-temp {
+  grid-area: lowtemp;
+}
+.high-temp {
+  grid-area: hightemp;
+}
+.low-temp,
+.high-temp {
+  color: #f8c6a2;
+}
+.low-temp span,
+.high-temp span {
+  color: #025e73;
+  opacity: 0.56;
+  font-size: 0.6em;
+}

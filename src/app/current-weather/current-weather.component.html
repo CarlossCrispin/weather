@@ -1,0 +1,21 @@
+<h1 [@showUpElement] >Temperatura en tiempo real</h1>
+<app-weather-card [@showUpElement]  [weather]="weatherService.weather$ | async"></app-weather-card>
+<!-- <div class="container bg-dark">
+  <p>
+    {{ weatherService.weather$ | async | json }}
+  </p>
+</div> -->
+<!-- <h1>Temperatura en tiempo real</h1>
+<div class="card" *ngIf="weatherService.weather$ | async as weather">
+    <div class="icon">
+        <app-weather-icon [code]="weather.cod"></app-weather-icon>
+    </div>
+    <div class="temp">
+        <p>Temperatura</p>
+        <p class="big">{{weather.temp}}º</p>
+    </div>
+    <div class="description">
+        <h2>{{weather.name}}</h2>
+        <p>{{weather.description}}</p>
+    </div>
+</div> -->
